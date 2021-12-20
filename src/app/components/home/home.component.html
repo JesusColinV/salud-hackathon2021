@@ -1,0 +1,83 @@
+<div class="row">
+    <div class="col-lg-4 offset-lg-4">
+        <h2 class="titulo">
+            Body mass index calculator by: Jesus Alejandro Colin Vilchis
+        </h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="bgitem" [ngClass] = "{'selectedSex': selected === 'Male'}">
+                    <div class="container" style="cursor: pointer;" (click)="selecteduploadM()">
+                        <div class="texto">
+                            <i class="fas fa-mars"></i>
+                            <p >Male</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bgitem" [ngClass] = "{'selectedSex': selected === 'Female'}">
+                    <div class="container" style="cursor: pointer;" (click)="selecteduploadF()">
+                        <div class="texto">
+                            <i class="fas fa-venus"></i>
+                            <p >Female</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bgitem">
+                    <div class="container">
+                        <div class="texto">
+                            <p class="peso">Height</p>
+                            <div class="numero">{{height}}
+                                <span class='unidad'>cm</span>
+                            </div>
+                        </div>
+                        <input type="range" class="form-range" [value]="height" min="120" max="220" (input)="uploadHeight($event)" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="bgitem">
+                    <div class="container">
+                        <div class="texto">
+                            <p class="presion">Weight</p>
+                            <div class="numero">{{weight}}
+                                <span class='unidad'>Kg</span>
+                            </div>
+                            <div>
+                                <i class="fas fa-minus MinusPlus" (click)="weight=weight+1"></i>
+                                <i class="fas fa-plus MinusPlus" (click)="weight=weight+1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bgitem">
+                    <div class="container">
+                        <div class="texto">
+                            <p class="frecuencia">Age</p>
+                            <div class="numero">{{age}}
+                                <span class='unidad'>years</span>
+                            </div>
+                            <div>
+                                <i class="fas fa-minus MinusPlus" (click)="age=age+1"></i>
+                                <i class="fas fa-plus MinusPlus" (click)="age=age+1"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <button (click)="calculateBMI()" class="btn btn-primary" type="submit">Calculate</button>
+            </div>
+        </div>
+    </div>
+</div>
